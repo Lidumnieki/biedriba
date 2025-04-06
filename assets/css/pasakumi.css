@@ -4272,38 +4272,38 @@ input, select, textarea {
 	}
 
 #footer {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(30, 30, 30, 0.9);
+  background-image: url("../images/footer-bg.jpg"); /* opcija ar caurspīdīgu fonu */
+  background-size: cover;
+  background-position: center;
   padding: 4em 0;
+  color: #ffffff;
   text-align: center;
-}
-
-#footer .inner {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 #footer .icons {
   list-style: none;
   padding: 0;
-  margin: 0 0 2em 0;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
-  gap: 1.5em;
+  gap: 2em;
 }
 
 #footer .icons li a {
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 #footer .copyright {
-  font-size: 0.9em;
-  opacity: 0.6;
+  font-size: 1em;
+  opacity: 0.7;
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 1em;
-  padding: 0;
-  margin: 0;
 }
+
 
