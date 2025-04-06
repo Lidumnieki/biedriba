@@ -2696,17 +2696,27 @@ input, select, textarea {
 		}
 
 		/* Jaunais cikliskais fona gradienta efekts */
-			#one > .spotlight:nth-of-type(1)  { background-color: rgba(0, 0, 0, 0.075); }
-			#one > .spotlight:nth-of-type(2)  { background-color: rgba(0, 0, 0, 0.15); }
-			#one > .spotlight:nth-of-type(3)  { background-color: rgba(0, 0, 0, 0.225); }
-			#one > .spotlight:nth-of-type(4)  { background-color: rgba(0, 0, 0, 0.3); }
-			#one > .spotlight:nth-of-type(5)  { background-color: rgba(0, 0, 0, 0.375); }
-			#one > .spotlight:nth-of-type(6)  { background-color: rgba(0, 0, 0, 0.45); }
-			#one > .spotlight:nth-of-type(7)  { background-color: rgba(0, 0, 0, 0.375); }
-			#one > .spotlight:nth-of-type(8)  { background-color: rgba(0, 0, 0, 0.3); }
-			#one > .spotlight:nth-of-type(9)  { background-color: rgba(0, 0, 0, 0.225); }
-			#one > .spotlight:nth-of-type(10) { background-color: rgba(0, 0, 0, 0.15); }
-			#one > .spotlight:nth-of-type(11) { background-color: rgba(0, 0, 0, 0.075); }
+			#one > .spotlight:nth-child(1)  { background-color: rgba(0, 0, 0, 0.075); }
+			#one > .spotlight:nth-child(2)  { background-color: rgba(0, 0, 0, 0.15); }
+			#one > .spotlight:nth-child(3)  { background-color: rgba(0, 0, 0, 0.225); }
+			#one > .spotlight:nth-child(4)  { background-color: rgba(0, 0, 0, 0.3); }
+			#one > .spotlight:nth-child(5)  { background-color: rgba(0, 0, 0, 0.375); }
+			#one > .spotlight:nth-child(6)  { background-color: rgba(0, 0, 0, 0.45); }
+			#one > .spotlight:nth-child(7)  { background-color: rgba(0, 0, 0, 0.375); }
+			#one > .spotlight:nth-child(8)  { background-color: rgba(0, 0, 0, 0.3); }
+			#one > .spotlight:nth-child(9)  { background-color: rgba(0, 0, 0, 0.225); }
+			#one > .spotlight:nth-child(10) { background-color: rgba(0, 0, 0, 0.15); }
+			#one > .spotlight:nth-child(11) { background-color: rgba(0, 0, 0, 0.075); }
+			#one > .spotlight:nth-child(12) { background-color: rgba(0, 0, 0, 0.1); }
+			#one > .spotlight:nth-child(13) { background-color: rgba(0, 0, 0, 0.2); }
+			#one > .spotlight:nth-child(14) { background-color: rgba(0, 0, 0, 0.3); }
+			#one > .spotlight:nth-child(15) { background-color: rgba(0, 0, 0, 0.4); }
+			#one > .spotlight:nth-child(16) { background-color: rgba(0, 0, 0, 0.5); }
+			#one > .spotlight:nth-child(17) { background-color: rgba(0, 0, 0, 0.4); }
+			#one > .spotlight:nth-child(18) { background-color: rgba(0, 0, 0, 0.3); }
+			#one > .spotlight:nth-child(19) { background-color: rgba(0, 0, 0, 0.2); }
+			#one > .spotlight:nth-child(20) { background-color: rgba(0, 0, 0, 0.1); }
+
 
 
 
