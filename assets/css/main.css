@@ -2695,6 +2695,7 @@ input, select, textarea {
 			width: 60%;
 		}
 
+		/*
 		.spotlight:nth-child(2n) {
 			-moz-flex-direction: row-reverse;
 			-webkit-flex-direction: row-reverse;
@@ -2741,7 +2742,8 @@ input, select, textarea {
 		.spotlight:nth-child(10) {
 			background-color: rgba(0, 0, 0, 0.75);
 		}
-
+		*/
+		
 		@media screen and (max-width: 1280px) {
 
 			.spotlight .image {
@@ -3998,10 +4000,18 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
-	.wrapper.alt.style2 {
-	background: linear-gradient(to bottom, 
-		rgba(0,0,0,0.075), 
-		rgba(0,0,0,0.75), 
-		rgba(0,0,0,0.075)
-	);
+.wrapper.alt.style2 {
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.075) 0%,
+    rgba(0,0,0,0.15) 10%,
+    rgba(0,0,0,0.225) 20%,
+    rgba(0,0,0,0.3) 30%,
+    rgba(0,0,0,0.375) 40%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.375) 60%,
+    rgba(0,0,0,0.3) 70%,
+    rgba(0,0,0,0.225) 80%,
+    rgba(0,0,0,0.15) 90%,
+    rgba(0,0,0,0.075) 100%
+  );
 }
