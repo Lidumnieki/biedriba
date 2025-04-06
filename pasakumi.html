@@ -1,169 +1,311 @@
 <!DOCTYPE HTML>
 <!--
-	Solid State by HTML5 UP
+	Spectral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
- <head>
-  <title>
-   Solid State by HTML5 UP
-  </title>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-  <link href="assets/css/pasakumi.css" rel="stylesheet">
-  <noscript>
-   <link href="assets/css/noscript.css" rel="stylesheet">
-  </noscript>
- </head>
- <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-jLKHWMZtH4DliWvC2YtKkA3wrpHJQ4W9YzUMurK7Zm8lKjZC2TAhXJTGZMRr6z0A" rel="stylesheet">
- <body class="is-preload landing">
-  <section id="banner-trigger" style="height: 1px; opacity: 0; pointer-events: none;">
-  </section>
-  <!-- Page Wrapper -->
-  <div id="page-wrapper">
-   <!-- Header -->
-   <header class="alt" id="header">
-    <h1>
-     <a href="index.html">
-      L&imacr;dumnieki
-     </a>
-    </h1>
-   </header>
-   <!-- Banner -->
-   <section id="banner">
-    <div class="inner">
-     <div class="logo">
-      <span class="icon fa-seedling">
-      </span>
-     </div>
-     <h2>
-      Biedr&imacr;ba "L&imacr;dumnieki"
-     </h2>
-     <p>
-      Pas&amacr;kumi
-     </p>
-    </div>
-   </section>
-   <!-- Wrapper -->
-   <section id="wrapper">
-    <!-- One -->
-    <section class="wrapper spotlight style1" id="one">
-     <div class="inner">
-      <a class="image" href="#">
-       <img alt src="images/pic01.jpg">
-      </a>
-      <div class="content">
-       <h2 class="major">
-        Magna arcu feugiat
-       </h2>
-       <p>
-        Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.
-       </p>
-       <a class="special" href="#">
-        Learn more
-       </a>
-      </div>
-     </div>
-    </section>
-    <!-- Two -->
-    <section class="wrapper alt spotlight style2" id="two">
-     <div class="inner">
-      <a class="image" href="#">
-       <img alt src="images/pic02.jpg">
-      </a>
-      <div class="content">
-       <h2 class="major">
-        Tempus adipiscing
-       </h2>
-       <p>
-        Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.
-       </p>
-       <a class="special" href="#">
-        Learn more
-       </a>
-      </div>
-     </div>
-    </section>
-    <!-- Three -->
-    <section class="wrapper spotlight style3" id="three">
-     <div class="inner">
-      <a class="image" href="#">
-       <img alt src="images/pic03.jpg">
-      </a>
-      <div class="content">
-       <h2 class="major">
-        Nullam dignissim
-       </h2>
-       <p>
-        Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.
-       </p>
-       <a class="special" href="#">
-        Learn more
-       </a>
-      </div>
-     </div>
-    </section>
-    <!-- Footer (saskaņots ar Līdumnieki lapu) -->
-    <section id="footer" style="background: rgba(50,50,50,0.85); padding: 2em 0; text-align: center; font-size: 1.1em;">
-     <div class="inner">
-      <ul class="icons">
-       <li>
-        <a class="icon brands fa-facebook-f" href="https://facebook.com">
-         <span class="label">
-          Facebook
-         </span>
-        </a>
-       </li>
-       <li>
-        <a class="icon solid fa-envelope" href="mailto:helena.ozolina@inbox.lv">
-         <span class="label">
-          Email
-         </span>
-        </a>
-       </li>
-      </ul>
-      <ul class="copyright">
-       <li>
-        &copy; Biedr&imacr;ba "L&imacr;dumnieki"
-       </li>
-       <li>
-        2025
-       </li>
-      </ul>
-     </div>
-    </section>
-   </section>
-  </div>
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js">
-  </script>
-  <script src="assets/js/jquery.scrollex.min.js">
-  </script>
-  <script src="assets/js/browser.min.js">
-  </script>
-  <script src="assets/js/breakpoints.min.js">
-  </script>
-  <script src="assets/js/util.js">
-  </script>
-  <script src="assets/js/main.js">
-  </script>
-  <script>
-   document.addEventListener("DOMContentLoaded", function () {
-  var header = document.getElementById("header");
-  var trigger = document.getElementById("banner-trigger");
+	<head>
+		<title>Līdumnieki</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+	</head>
+	<body class="landing is-preload">
 
-  function updateHeader() {
-    if (window.scrollY > trigger.offsetHeight) {
-      header.classList.remove("alt");
-    } else {
-      header.classList.add("alt");
-    }
-  }
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-  window.addEventListener("scroll", updateHeader);
-  updateHeader();
-});
-  </script>
- </body>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Līdumnieki</a></h1>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Biedrība "Līdumnieki"</h2>
+							<p>Tukuma nov., Zentenes pag., "Līdumnieki", LV-3123<br />
+							+371 24335244<br />
+							helena.ozolina@inbox.lv</p>
+						</div>
+						<a href="#one" class="more scrolly">Uzzināt vairāk</a>
+					</section>
+				
+				<!-- One -->
+					<section id="one" class="wrapper style3 special">
+					  <div class="inner">
+					    <header class="major">
+					      <h2>Labākās ķiršu šķirnes Latvijas mājsaimniecībām – izvēlies gudri!</h2>
+					      <p>Uzzini, kuras ķiršu šķirnes vislabāk piemērotas Latvijas klimatam – no salizturīgām līdz pašauglīgām.</p>
+					    </header>
+					    <ul class="features">
+					      <li class="icon solid fa-seedling">
+					        <h3>Latvijas Zemais</h3>
+					        <p>Latvijas selekcija ar labu salizturību. Kompakts koks ar agrīnu ražu jūnijā/jūlijā. Augļi vidēji lieli, tumši sarkani un sulīgi. Nepieciešams regulārs vainaga veidojums.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Iput</h3>
+					        <p>Krievu šķirne ar lielām tumši sarkanām ogām un spēcīgu garšu. Ļoti salizturīga, bet nav pašauglīga – nepieciešams apputeksnētājs. Var būt jutīga mitros gados.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Zentenes</h3>
+					        <p>Latvijas šķirne – pašauglīga, ar tumšiem, saldskābiem augļiem. Labs salizturības līmenis. Var plīst stipra lietus laikā, raža mazāka nekā jaunākām šķirnēm.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Stella</h3>
+					        <p>Kanādas izcelsmes pašauglīga šķirne ar ļoti saldiem, lieliem augļiem. Ilgs ražošanas periods, bet jutīga pret salu un slimībām – jāuzrauga veselība.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Bulatnikova</h3>
+					        <p>Skābais ķirsis no Krievijas. Ļoti laba salizturība, bagātīga raža. Skābenas ogas – ideāli ievārījumiem un sulām. Nepieciešams apputeksnētājs.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Leningradskaya Chernaya</h3>
+					        <p>Krievu saldais ķirsis ar lielām, tumši sarkanām ogām. Izturīgs pret slimībām. Nepieciešams apputeksnētājs. Var būt nestabila raža aukstos pavasaros.</p>
+					      </li>
+					    </ul>
+					  </div>
+					</section>
+				
+				<!-- Secinājums un Padoms -->
+					<section class="wrapper style2">
+					  <div class="inner">
+					    <header class="major">
+					      <h2>Secinājumi un padomi izvēlei</h2>
+					    </header>
+					    <p><strong>Mazam dārzam vai vienam kokam:</strong> izvēlies pašauglīgas šķirnes – piemēram, <em>‘Stella’</em> vai <em>‘Zentenes’</em>.</p>
+					    <p><strong>Pārstrādei:</strong> skābais ķirsis <em>‘Bulatnikova’</em> būs izcils.</p>
+					    <p><strong>Bagātīgai ražai un lieliem augļiem:</strong> piemērotas šķirnes – <em>‘Iput’</em> vai <em>‘Leningradskaya Chernaya’</em>.</p>
+					    <p><strong>Drošākā izvēle ar labu salizturību:</strong> <em>‘Latvijas Zemais’</em>.</p>
+					    <hr />
+					    <p><strong>Padoms:</strong> Lai palielinātu ražību, stādi vairākas šķirnes, kas savstarpēji apputeksnējas – tas palīdz iegūt labāku augļu piesiešanu un palielina kopējo ražu.</p>
+					  </div>
+					</section>
+				
+				<!-- Two -->
+					<section id="two" class="wrapper style3 special">
+					  <div class="inner">
+					    <header class="major">
+					      <h2>Ķiršu audzēšanas padomi Latvijas dārzos 🍒</h2>
+					      <p>10 svarīgākie ieteikumi ķiršu veiksmīgai audzēšanai Latvijas klimatā – no stādīšanas līdz ražas novākšanai.</p>
+					    </header>
+					    <ul class="features">
+					      <li class="icon solid fa-seedling">
+					        <h3>1. Izvēlies piemērotu vietu</h3>
+					        <p>Saulaina vieta, pasargāta no ziemeļu un austrumu vējiem, ar labu drenāžu – stāvošs ūdens bojā saknes. Smagā augsnē stādi uz paugura.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>2. Pareiza augsne</h3>
+					        <p>Viegla smilšmāla vai mālsmilts augsne ar pH 6.0–7.0. Pirms stādīšanas ielabo ar kompostu vai kūtsmēsliem, izvairies no pārmērīgas slāpekļa mēslošanas.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>3. Stādīšanas laiks un dziļums</h3>
+					        <p>Pavasarī (aprīlis–maijs). Stādi tik dziļi, kā bijis podā. Attālumi: vāji augošiem – 2.5–3 m, spēcīgi augošiem – 4–5 m.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>4. Laistīšana</h3>
+					        <p>Jauniem stādiem – regulāri, īpaši sausuma laikā. Nobriedušiem – tikai ilgstoša sausuma gadījumā. Nepārlaisti!</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>5. Mēslošana</h3>
+					        <p>Pavasarī – neliela slāpekļa deva. Rudenī – fosfors un kālijs. Ievēro mēru – pārdozēšana veicina slimības.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>6. Vainaga veidošana un apgriešana</h3>
+					        <p>Veido vaļēju, saulainu vainagu. Apgriezt agrā pavasarī vai tūlīt pēc ražas. Noņem krusteniskos un slimus zarus. Regulāra atjaunošana.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>7. Apputeksnēšana</h3>
+					        <p>Daudzas šķirnes nav pašauglīgas – stādi saderīgu pāri. Pašauglīgās šķirnes kā ‘Stella’ vai ‘Zentenes’ piemērotas vienam kokam.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>8. Aizsardzība pret salu</h3>
+					        <p>Stādi aizsargātos pagalmos vai dienvidu nogāzēs. Mulča ap saknēm palīdz. Ziedēšanas laikā aizsardzība pret nakts salnām (agrotīkls).</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>9. Slimības un kaitēkļi</h3>
+					        <p>Biežākās problēmas – monilioze, lapbiras, ķiršu muša. Novāc bojātos augļus, veic profilaktisku smidzināšanu agrā pavasarī.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>10. Ražas novākšana un kopšana</h3>
+					        <p>Ogas novāc pilnīgā gatavībā – tās nenogatavojas vēlāk. Neatstāj pārāk ilgi uz koka. Pēc novākšanas mulčē sakņu zonu.</p>
+					      </li>
+					    </ul>
+					  </div>
+					</section>
+				
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+					  <div class="inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+					    
+					    <header style="margin: 0;">
+					      <h2>Pasākumi</h2>
+					      <p>Uzzini vairāk par mūsu iepriekšējiem pasākumiem</p>
+					    </header>
+					
+					    <ul class="actions" style="margin: 0;">
+					      <li><a href="pasakumi.html" class="button primary">Uzzināt vairāk</a></li>
+					    </ul>
+					    
+					  </div>
+					</section>
+
+
+				<!-- Bloku template, footer neaiztikt
+
+				<!-- One
+					<section id="one" class="wrapper style3 special">
+					  <div class="inner">
+					    <header class="major">
+					      <h2>Labākās ķiršu šķirnes Latvijas mājsaimniecībām – izvēlies gudri!</h2>
+					      <p>Uzzini, kuras ķiršu šķirnes vislabāk piemērotas Latvijas klimatam – no salizturīgām līdz pašauglīgām.</p>
+					    </header>
+					    <ul class="features">
+					      <li class="icon solid fa-seedling">
+					        <h3>Latvijas Zemais</h3>
+					        <p>Latvijas selekcija ar labu salizturību. Kompakts koks ar agrīnu ražu jūnijā/jūlijā. Augļi vidēji lieli, tumši sarkani un sulīgi. Nepieciešams regulārs vainaga veidojums.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Iput</h3>
+					        <p>Krievu šķirne ar lielām tumši sarkanām ogām un spēcīgu garšu. Ļoti salizturīga, bet nav pašauglīga – nepieciešams apputeksnētājs. Var būt jutīga mitros gados.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Zentenes</h3>
+					        <p>Latvijas šķirne – pašauglīga, ar tumšiem, saldskābiem augļiem. Labs salizturības līmenis. Var plīst stipra lietus laikā, raža mazāka nekā jaunākām šķirnēm.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Stella</h3>
+					        <p>Kanādas izcelsmes pašauglīga šķirne ar ļoti saldiem, lieliem augļiem. Ilgs ražošanas periods, bet jutīga pret salu un slimībām – jāuzrauga veselība.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Bulatnikova</h3>
+					        <p>Skābais ķirsis no Krievijas. Ļoti laba salizturība, bagātīga raža. Skābenas ogas – ideāli ievārījumiem un sulām. Nepieciešams apputeksnētājs.</p>
+					      </li>
+					      <li class="icon solid fa-seedling">
+					        <h3>Leningradskaya Chernaya</h3>
+					        <p>Krievu saldais ķirsis ar lielām, tumši sarkanām ogām. Izturīgs pret slimībām. Nepieciešams apputeksnētājs. Var būt nestabila raža aukstos pavasaros.</p>
+					      </li>
+					    </ul>
+					  </div>
+					</section>
+				
+				<!-- Secinājums un Padoms 
+					<section class="wrapper style2">
+					  <div class="inner">
+					    <header class="major">
+					      <h2>Secinājumi un padomi izvēlei</h2>
+					    </header>
+					    <p><strong>Mazam dārzam vai vienam kokam:</strong> izvēlies pašauglīgas šķirnes – piemēram, <em>‘Stella’</em> vai <em>‘Zentenes’</em>.</p>
+					    <p><strong>Pārstrādei:</strong> skābais ķirsis <em>‘Bulatnikova’</em> būs izcils.</p>
+					    <p><strong>Bagātīgai ražai un lieliem augļiem:</strong> piemērotas šķirnes – <em>‘Iput’</em> vai <em>‘Leningradskaya Chernaya’</em>.</p>
+					    <p><strong>Drošākā izvēle ar labu salizturību:</strong> <em>‘Latvijas Zemais’</em>.</p>
+					    <hr />
+					    <p><strong>Padoms:</strong> Lai palielinātu ražību, stādi vairākas šķirnes, kas savstarpēji apputeksnējas – tas palīdz iegūt labāku augļu piesiešanu un palielina kopējo ražu.</p>
+					  </div>
+					</section>
+
+				Spotlight bloks
+				<!-- Two
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+								<h2>teksts1<br />
+								steksts2</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<h2>teksts1<br />
+								teksts2</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+								<h2>teksts1<br />
+								teksts2</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+					</section>
+				
+				<!-- Three 
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Accumsan mus tortor nunc aliquet</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-paper-plane">
+									<h3>Arcu accumsan</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-laptop">
+									<h3>Ac Augue Eget</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-code">
+									<h3>Mus Scelerisque</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-headphones-alt">
+									<h3>Mauris Imperdiet</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-heart">
+									<h3>Aenean Primis</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-flag">
+									<h3>Tortor Ut</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+				
+				<!-- CTA 
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>varbut izdzest nez</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary">Activate</a></li>
+								<li><a href="#" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Biedrība "Līdumnieki"</li><li>2025 </li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
