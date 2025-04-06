@@ -2696,16 +2696,17 @@ input, select, textarea {
 		}
 
 		/* Jaunais cikliskais fona gradienta efekts */
-			.spotlight:nth-child(10n+1)  { background-color: rgba(0, 0, 0, 0.075); }
-			.spotlight:nth-child(10n+2)  { background-color: rgba(0, 0, 0, 0.15); }
-			.spotlight:nth-child(10n+3)  { background-color: rgba(0, 0, 0, 0.225); }
-			.spotlight:nth-child(10n+4)  { background-color: rgba(0, 0, 0, 0.3); }
-			.spotlight:nth-child(10n+5)  { background-color: rgba(0, 0, 0, 0.375); }
-			.spotlight:nth-child(10n+6)  { background-color: rgba(0, 0, 0, 0.45); }
-			.spotlight:nth-child(10n+7)  { background-color: rgba(0, 0, 0, 0.375); }
-			.spotlight:nth-child(10n+8)  { background-color: rgba(0, 0, 0, 0.3); }
-			.spotlight:nth-child(10n+9)  { background-color: rgba(0, 0, 0, 0.225); }
-			.spotlight:nth-child(10n+10) { background-color: rgba(0, 0, 0, 0.15); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+1)  { background-color: rgba(0, 0, 0, 0.075); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+2)  { background-color: rgba(0, 0, 0, 0.15); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+3)  { background-color: rgba(0, 0, 0, 0.225); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+4)  { background-color: rgba(0, 0, 0, 0.3); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+5)  { background-color: rgba(0, 0, 0, 0.375); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+6)  { background-color: rgba(0, 0, 0, 0.45); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+7)  { background-color: rgba(0, 0, 0, 0.375); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+8)  { background-color: rgba(0, 0, 0, 0.3); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+9)  { background-color: rgba(0, 0, 0, 0.225); }
+			.wrapper.alt.style2 .spotlight:nth-child(10n+10) { background-color: rgba(0, 0, 0, 0.15); }
+
 		/*
 		.spotlight:nth-child(2n) {
 			-moz-flex-direction: row-reverse;
