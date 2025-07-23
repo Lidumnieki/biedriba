@@ -2103,27 +2103,9 @@ input, select, textarea {
 			display: block;
 		}
 
-		.image.left {
-			float: left;
-			margin: 0 2em 2em 0;
-			top: 0.25em;
-			width: 200px;
-		}
-		
-		.image.right {
-			float: right;
-			margin: 0 0 2em 2em;
-			top: 0.25em;
-			width: 200px;
-		}
-		
-		.image.left img,
-		.image.right img {
-			width: 100%;
-			height: auto;
-		}
 
-/*24.07
+
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
@@ -2143,7 +2125,7 @@ input, select, textarea {
 			.image.left img, .image.right img {
 				width: 100%;
 			}
-*/
+
 
 		.image.fit {
 			display: block;
