@@ -4015,3 +4015,42 @@ input, select, textarea {
     rgba(0,0,0,0.075) 100%
   );
 }
+
+/*23.07*/
+/* Dropdown (details) stilizācija */
+details {
+  margin: 1.5em 0;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+details:hover {
+  background-color: #f1f1f1;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+}
+
+details[open] summary {
+  color: #007acc; /* Izvēlies krāsu, kas piestāv lapai */
+}
+
+details p, details ul, details ol {
+  margin-top: 0.8em;
+  margin-left: 1em;
+  font-size: 1em;
+  color: #333;
+}
+
+.wrapper.style2 details {
+  background: white;
+  border-color: #e0e0e0;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+}
