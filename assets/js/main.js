@@ -49,6 +49,16 @@
 				speed: 1500,
 				offset: $header.outerHeight()
 			});
+	
+	// Parādīt pogu, ja ritināts uz leju
+		document.addEventListener("scroll", function () {
+		  if (window.scrollY > 300) {
+		    document.body.classList.add("scrolled");
+		  } else {
+		    document.body.classList.remove("scrolled");
+		  }
+		});
+
 
 	// Menu.
 		$('#menu')
