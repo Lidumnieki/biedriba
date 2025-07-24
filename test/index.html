@@ -622,6 +622,19 @@
 			    });
 			  });
 			</script>
+			<script>
+			  document.addEventListener("DOMContentLoaded", function () {
+			    const scrollBtn = document.querySelector('.scroll-to-top');
+			
+			    window.addEventListener('scroll', function () {
+			      if (window.scrollY > 300) {
+			        scrollBtn.style.display = 'inline-block';
+			      } else {
+			        scrollBtn.style.display = 'none';
+			      }
+			    });
+			  });
+			</script>
 
 			<a href="#top" class="scroll-to-top scrolly">↑</a>
 
