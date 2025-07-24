@@ -4066,26 +4066,29 @@ details p, details ul, details ol {
   display: none;
   z-index: 1000;
 
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   border-radius: 50%;
   border: 2px solid white;
   background-color: transparent;
   color: white;
   font-weight: bold;
   text-align: center;
-  line-height: 3em;
+  line-height: 3.5em;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   opacity: 0;
+  white-space: nowrap;
+  font-size: 0.8em;
 }
 
 .scroll-to-top:hover {
   background-color: white;
-  color: #2f4f2f; /* tumši zaļš teksts uz hover */
+  color: #2f4f2f;
 }
 
 .scroll-to-top.show {
   display: inline-block;
   opacity: 1;
 }
+
