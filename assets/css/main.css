@@ -4063,32 +4063,43 @@ details p, details ul, details ol {
   position: fixed;
   bottom: 2em;
   right: 2em;
-  display: none;
-  z-index: 1000;
-
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  line-height: 3.5em;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  opacity: 0;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 3em;
+  box-shadow: inset 0 0 0 2px #fff;
+  color: #fff !important;
+  cursor: pointer;
   font-size: 0.8em;
+  font-weight: 700;
+  height: 3.5em;
+  line-height: 3.5em;
+  min-width: 10em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  white-space: nowrap;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .scroll-to-top:hover {
-  background-color: white;
-  color: #2f4f2f;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
 }
 
-.scroll-to-top.show {
-  display: inline-block;
-  opacity: 1;
+.scroll-to-top::before {
+  content: '↑';
+  font-size: 1.2em;
+  margin-bottom: 0.25em;
+  display: block;
+}
+
+.scroll-to-top .label {
+  font-size: 0.8em;
 }
 
