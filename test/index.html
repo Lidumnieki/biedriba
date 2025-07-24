@@ -628,9 +628,9 @@
 			
 			    window.addEventListener('scroll', function () {
 			      if (window.scrollY > 300) {
-			        scrollBtn.style.display = 'inline-block';
+			        scrollBtn.classList.add('show');
 			      } else {
-			        scrollBtn.style.display = 'none';
+			        scrollBtn.classList.remove('show');
 			      }
 			    });
 			  });
