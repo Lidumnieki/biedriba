@@ -4060,30 +4060,13 @@ details p, details ul, details ol {
 }
 
 .scroll-to-top {
-  display: none !important;
   position: fixed;
   bottom: 2em;
   right: 2em;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 1em;           /* Kvadrāts ar noapaļotiem stūriem */
-  padding: 0.6em 1.2em;
-  font-size: 0.85em;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.3s ease;
-  opacity: 0;
-  z-index: 999;
+  display: none;
+  z-index: 1000;
 }
 
-.scroll-to-top.show {
-  display: inline-block !important;
-  opacity: 1;
-}
-
-.scroll-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+body.scrolled .scroll-to-top {
+  display: inline-block;
 }
