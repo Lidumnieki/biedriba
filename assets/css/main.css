@@ -4066,23 +4066,26 @@ details p, details ul, details ol {
   display: none;
   z-index: 1000;
 
-  background-color: #fff;         /* Balts fons */
-  color: #2f4f2f;                 /* Tumši zaļš teksts */
-  border-radius: 0.75em;          /* Noapaļoti stūri */
-  padding: 0.6em 1.2em;           /* Atstatums ap tekstu */
-  text-decoration: none;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
   font-weight: bold;
-  font-size: 0.9em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Ēna */
-
-  transition: background-color 0.2s, color 0.2s;
+  text-align: center;
+  line-height: 3em;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  opacity: 0;
 }
 
 .scroll-to-top:hover {
-  background-color: #2f4f2f;      /* Tumši zaļš fons uz hover */
-  color: #fff;                    /* Balts teksts uz hover */
+  background-color: white;
+  color: #2f4f2f; /* tumši zaļš teksts uz hover */
 }
 
-body.scrolled .scroll-to-top {
+.scroll-to-top.show {
   display: inline-block;
+  opacity: 1;
 }
