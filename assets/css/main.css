@@ -4060,13 +4060,36 @@ details p, details ul, details ol {
 }
 
 .scroll-to-top {
+  display: none !important;
   position: fixed;
   bottom: 2em;
   right: 2em;
-  display: none;
-  z-index: 1000;
+  border: 0;
+  border-radius: 3em;
+  box-shadow: inset 0 0 0 2px #fff;
+  color: #fff !important;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: 700;
+  height: 3.5em;
+  line-height: 3.5em;
+  min-width: 10em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  z-index: 999;
+  opacity: 0;
+  white-space: nowrap;
 }
 
-body.scrolled .scroll-to-top {
-  display: inline-block;
+.scroll-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-to-top.show {
+  display: inline-block !important;
+  opacity: 1;
 }
