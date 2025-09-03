@@ -82,10 +82,7 @@
     <!-- Lightbox script -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const grid = document.getElementById('gal');
-      if (!grid) return;
-    
-      const items = [...grid.querySelectorAll('.gal-card')];
+      const items = [...document.querySelectorAll('#gal .gal-card')];
       const dlg = document.getElementById('gal-lightbox');
       const img = dlg.querySelector('.gal-img');
       const btnClose = dlg.querySelector('.gal-close');
@@ -101,34 +98,27 @@
         const alt = fig.querySelector('img').alt || '';
         img.src = src;
         img.alt = alt;
-        if (!dlg.open) dlg.showModal();
+        dlg.showModal();
       }
     
-      function closeBox() {
-        if (dlg.open) dlg.close();
-        img.removeAttribute('src');
-      }
-    
+      function closeBox() { dlg.close(); img.removeAttribute('src'); }
       function prev() { openAt((index - 1 + items.length) % items.length); }
       function next() { openAt((index + 1) % items.length); }
     
-      // Kad klikšķina uz galerijas saites
-      grid.addEventListener('click', (e) => {
-        const a = e.target.closest('a');
-        if (!a) return;
-        e.preventDefault();
-        const i = items.indexOf(a.closest('.gal-card'));
-        if (i >= 0) openAt(i);
+      // Pievieno listener katram <a>
+      items.forEach((fig, i) => {
+        const a = fig.querySelector('a');
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          openAt(i);
+        });
       });
     
       btnClose.addEventListener('click', closeBox);
       btnPrev.addEventListener('click', prev);
       btnNext.addEventListener('click', next);
-    
-      // Aizver, ja klikšķina fonā
       dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
     
-      // Klaviatūras vadība
       document.addEventListener('keydown', (e) => {
         if (!dlg.open) return;
         if (e.key === 'Escape') closeBox();
@@ -137,6 +127,7 @@
       });
     });
     </script>
+
 
   </body>
 </html>
