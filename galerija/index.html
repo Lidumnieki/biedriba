@@ -1,102 +1,134 @@
 <!DOCTYPE HTML>
-<!--
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Biedrība "Līdumnieki" | Aktualitātes</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
-	</head>
-	<body id="top" class="landing is-preload">
+  <head>
+    <title>Biedrība "Līdumnieki" | Aktualitātes</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+  </head>
+  <body id="top" class="landing is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    <div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Līdumnieki</a></h1>
-					</header>
-				
-				<!-- One -->
-					<section id="one" class="wrapper style3">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1><a href="index.html">Līdumnieki</a></h1>
+      </header>
 
-						<section class="wrapper style3">
-						  	<div class="inner">
-						    		<header class="major">
-						      			<h2>Galerija</h2>
-						    		</header>
+      <!-- One -->
+      <section id="one" class="wrapper style3">
+        <section class="wrapper style3">
+          <div class="inner">
+            <header class="major">
+              <h2>Galerija</h2>
+            </header>
 
-									<!-- Galerija -->
-									<div class="gallery">
-										<img src="/images/img1.jpg" alt="Apraksts 1">
-										<img src="/images/img2.jpg" alt="Apraksts 2">
-										<img src="/images/img3.jpg" alt="Apraksts 3">
-										<img src="/images/img4.jpg" alt="Apraksts 4">
-										<img src="/images/img5.jpg" alt="Apraksts 5">
-										<img src="/images/img6.jpg" alt="Apraksts 6">
-									</div>
-						  	</div>
-						</section>
-				
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Biedrība "Līdumnieki"</li><li>2025 </li>
-						</ul>
-					</footer>
+            <!-- Galerija -->
+            <div class="gal-grid" id="gal">
+              <!-- Katra karte -->
+              <figure class="gal-card">
+                <img src="/images/photo1.jpg" alt="Apraksts 1" loading="lazy" width="800" height="600" />
+                <figcaption>Nosaukums 1</figcaption>
+                <a href="#" data-full="/images/photo1.jpg" aria-label="Atvērt attēlu: Nosaukums 1"></a>
+              </figure>
 
-			</div>
+              <figure class="gal-card">
+                <img src="/images/photo2.jpg" alt="Apraksts 2" loading="lazy" width="800" height="600" />
+                <figcaption>Nosaukums 2</figcaption>
+                <a href="#" data-full="/images/photo2.jpg" aria-label="Atvērt attēlu: Nosaukums 2"></a>
+              </figure>
 
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.scrollex.min.js"></script>
-			<script src="/assets/js/jquery.scrolly.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
-			<script>
-			  document.addEventListener("DOMContentLoaded", function () {
-			    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			      anchor.addEventListener("click", function (e) {
-			        const targetId = this.getAttribute("href").substring(1);
-			        const target = document.getElementById(targetId);
-			
-			        if (target) {
-			          e.preventDefault();
-			          target.scrollIntoView({ behavior: "smooth" });
-			          history.replaceState(null, null, location.pathname);
-			        }
-			      });
-			    });
-			  });
-			</script>
-			<script>
-			  document.addEventListener("DOMContentLoaded", function () {
-			    const scrollButton = document.querySelector(".scroll-to-top");
-			
-			    window.addEventListener("scroll", function () {
-			      if (window.scrollY > 300) {
-			        scrollButton.classList.add("show");
-			      } else {
-			        scrollButton.classList.remove("show");
-			      }
-			    });
-			  });
-			</script>
+              <figure class="gal-card">
+                <img src="/images/photo3.jpg" alt="Apraksts 3" loading="lazy" width="800" height="600" />
+                <figcaption>Nosaukums 3</figcaption>
+                <a href="#" data-full="/images/photo3.jpg" aria-label="Atvērt attēlu: Nosaukums 3"></a>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </section>
 
-			<a href="#top" class="more scrolly scroll-to-top">Uz augšu</a>
+      <!-- Lightbox dialogs -->
+      <dialog class="gal-lightbox" id="gal-lightbox" aria-label="Lielais attēls">
+        <button class="gal-close" aria-label="Aizvērt (Esc)">&times;</button>
+        <button class="gal-prev" aria-label="Iepriekšējais">&#8249;</button>
+        <img class="gal-img" alt="" />
+        <button class="gal-next" aria-label="Nākamais">&#8250;</button>
+      </dialog>
 
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Biedrība "Līdumnieki"</li><li>2025 </li>
+        </ul>
+      </footer>
+    </div>
 
-	</body>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Lightbox script -->
+    <script>
+    (() => {
+      const grid = document.getElementById('gal');
+      if (!grid) return;
+
+      const items = [...grid.querySelectorAll('.gal-card')];
+      const dlg = document.getElementById('gal-lightbox');
+      const img = dlg.querySelector('.gal-img');
+      const btnClose = dlg.querySelector('.gal-close');
+      const btnPrev = dlg.querySelector('.gal-prev');
+      const btnNext = dlg.querySelector('.gal-next');
+      let index = 0;
+
+      function openAt(i) {
+        index = i;
+        const fig = items[i];
+        const a = fig.querySelector('a');
+        const src = a.dataset.full || fig.querySelector('img').src;
+        const alt = fig.querySelector('img').alt || '';
+        img.src = src;
+        img.alt = alt;
+        if (!dlg.open) dlg.showModal();
+      }
+      function closeBox() {
+        if (dlg.open) dlg.close();
+        img.removeAttribute('src');
+      }
+      function prev() { openAt((index - 1 + items.length) % items.length); }
+      function next() { openAt((index + 1) % items.length); }
+
+      grid.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (!a) return;
+        e.preventDefault();
+        const i = items.indexOf(a.closest('.gal-card'));
+        if (i >= 0) openAt(i);
+      });
+
+      btnClose.addEventListener('click', closeBox);
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
+      document.addEventListener('keydown', (e) => {
+        if (!dlg.open) return;
+        if (e.key === 'Escape') closeBox();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
+      });
+    })();
+    </script>
+  </body>
 </html>
