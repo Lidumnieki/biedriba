@@ -4143,13 +4143,16 @@ details p, details ul, details ol {
 }
 .gal-close, .gal-prev, .gal-next {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;      /* fiksēts izmērs */
+  height: 40px;
   background: rgba(0,0,0,0.6);
   color: #fff;
   border: none;
-  font-size: 2rem;
-  line-height: 1;
-  padding: .4rem .6rem;
-  border-radius: 8px; /* taisnstūra forma ar noapaļotiem stūriem */
+  font-size: 1.5rem;
+  border-radius: 50%;  /* perfekts aplis */
   cursor: pointer;
   transition: background .2s;
 }
@@ -4161,7 +4164,6 @@ details p, details ul, details ol {
 .gal-close { 
   top: 20px; 
   right: 20px; 
-  font-size: 2rem; 
 }
 
 .gal-prev, .gal-next {
@@ -4171,6 +4173,8 @@ details p, details ul, details ol {
 
 .gal-prev { left: 20px; }
 .gal-next { right: 20px; }
+
+
 
 
 
