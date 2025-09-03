@@ -7,6 +7,75 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+    <style>
+      /* === Galerija ar lightbox === */
+      .gal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .gal-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #111;
+        cursor: pointer;
+      }
+      .gal-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform .3s;
+      }
+      .gal-card:hover img {
+        transform: scale(1.05);
+      }
+      .gal-card figcaption {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
+        color: #fff;
+        padding: .5rem;
+        font-size: .9rem;
+      }
+
+      /* Lightbox */
+      .gal-lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0,0,0,.85);
+        border: none;
+        padding: 0;
+        z-index: 9999;
+      }
+      .gal-lightbox[open] {
+        display: flex;
+      }
+      .gal-img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #000;
+      }
+      .gal-close, .gal-prev, .gal-next {
+        position: absolute;
+        background: #0009;
+        color: #fff;
+        border: none;
+        font-size: 2rem;
+        padding: .5rem .75rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .gal-close { top: 20px; right: 20px; font-size: 2.5rem; }
+      .gal-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+      .gal-next { right: 20px; top: 50%; transform: translateY(-50%); }
+      dialog::backdrop { background: rgba(0,0,0,0.85); }
+    </style>
   </head>
   <body id="top" class="landing is-preload">
 
@@ -27,23 +96,19 @@
 
             <!-- Galerija -->
             <div class="gal-grid" id="gal">
-              <!-- Katra karte -->
               <figure class="gal-card">
-                <img src="/images/img1.jpg" alt="Apraksts 1" loading="lazy" width="800" height="600" />
+                <img src="/images/img1.jpg" alt="Apraksts 1" data-full="/images/img1.jpg" />
                 <figcaption>Nosaukums 1</figcaption>
-                <a href="#" data-full="/images/img1.jpg" aria-label="Atvērt attēlu: Nosaukums 1"></a>
               </figure>
 
               <figure class="gal-card">
-                <img src="/images/img2.jpg" alt="Apraksts 2" loading="lazy" width="800" height="600" />
+                <img src="/images/img2.jpg" alt="Apraksts 2" data-full="/images/img2.jpg" />
                 <figcaption>Nosaukums 2</figcaption>
-                <a href="#" data-full="/images/img2.jpg" aria-label="Atvērt attēlu: Nosaukums 2"></a>
               </figure>
 
               <figure class="gal-card">
-                <img src="/images/img3.jpg" alt="Apraksts 3" loading="lazy" width="800" height="600" />
+                <img src="/images/img3.jpg" alt="Apraksts 3" data-full="/images/img3.jpg" />
                 <figcaption>Nosaukums 3</figcaption>
-                <a href="#" data-full="/images/img3.jpg" aria-label="Atvērt attēlu: Nosaukums 3"></a>
               </figure>
             </div>
           </div>
@@ -82,43 +147,38 @@
     <!-- Lightbox script -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const items = [...document.querySelectorAll('#gal .gal-card')];
+      console.log("Lightbox skripts ielādēts!"); // DEBUG
+
+      const items = [...document.querySelectorAll('#gal .gal-card img')];
       const dlg = document.getElementById('gal-lightbox');
       const img = dlg.querySelector('.gal-img');
       const btnClose = dlg.querySelector('.gal-close');
       const btnPrev = dlg.querySelector('.gal-prev');
       const btnNext = dlg.querySelector('.gal-next');
       let index = 0;
-    
+
       function openAt(i) {
         index = i;
-        const fig = items[i];
-        const a = fig.querySelector('a');
-        const src = a.dataset.full || fig.querySelector('img').src;
-        const alt = fig.querySelector('img').alt || '';
+        const src = items[i].dataset.full || items[i].src;
+        const alt = items[i].alt || '';
         img.src = src;
         img.alt = alt;
         dlg.showModal();
       }
-    
+
       function closeBox() { dlg.close(); img.removeAttribute('src'); }
       function prev() { openAt((index - 1 + items.length) % items.length); }
       function next() { openAt((index + 1) % items.length); }
-    
-      // Pievieno listener katram <a>
-      items.forEach((fig, i) => {
-        const a = fig.querySelector('a');
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          openAt(i);
-        });
+
+      items.forEach((el, i) => {
+        el.addEventListener('click', () => openAt(i));
       });
-    
+
       btnClose.addEventListener('click', closeBox);
       btnPrev.addEventListener('click', prev);
       btnNext.addEventListener('click', next);
       dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
-    
+
       document.addEventListener('keydown', (e) => {
         if (!dlg.open) return;
         if (e.key === 'Escape') closeBox();
@@ -127,7 +187,5 @@
       });
     });
     </script>
-
-
   </body>
 </html>
