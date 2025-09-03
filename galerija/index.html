@@ -81,10 +81,10 @@
 
     <!-- Lightbox script -->
     <script>
-    (() => {
+    document.addEventListener("DOMContentLoaded", function () {
       const grid = document.getElementById('gal');
       if (!grid) return;
-
+    
       const items = [...grid.querySelectorAll('.gal-card')];
       const dlg = document.getElementById('gal-lightbox');
       const img = dlg.querySelector('.gal-img');
@@ -92,7 +92,7 @@
       const btnPrev = dlg.querySelector('.gal-prev');
       const btnNext = dlg.querySelector('.gal-next');
       let index = 0;
-
+    
       function openAt(i) {
         index = i;
         const fig = items[i];
@@ -103,13 +103,16 @@
         img.alt = alt;
         if (!dlg.open) dlg.showModal();
       }
+    
       function closeBox() {
         if (dlg.open) dlg.close();
         img.removeAttribute('src');
       }
+    
       function prev() { openAt((index - 1 + items.length) % items.length); }
       function next() { openAt((index + 1) % items.length); }
-
+    
+      // Kad klikšķina uz galerijas saites
       grid.addEventListener('click', (e) => {
         const a = e.target.closest('a');
         if (!a) return;
@@ -117,18 +120,23 @@
         const i = items.indexOf(a.closest('.gal-card'));
         if (i >= 0) openAt(i);
       });
-
+    
       btnClose.addEventListener('click', closeBox);
       btnPrev.addEventListener('click', prev);
       btnNext.addEventListener('click', next);
+    
+      // Aizver, ja klikšķina fonā
       dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
+    
+      // Klaviatūras vadība
       document.addEventListener('keydown', (e) => {
         if (!dlg.open) return;
         if (e.key === 'Escape') closeBox();
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
       });
-    })();
+    });
     </script>
+
   </body>
 </html>
