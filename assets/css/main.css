@@ -4089,18 +4089,71 @@ details p, details ul, details ol {
   opacity: 1;
 }
 
-/* Vienkārša galerija */
-.gallery {
+/* === Galerija ar lightbox === */
+.gal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
   margin: 20px 0;
 }
-
-.gallery img {
+.gal-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
+.gal-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
+  transition: transform .3s;
 }
+.gal-card:hover img {
+  transform: scale(1.05);
+}
+.gal-card figcaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
+  color: #fff;
+  padding: .5rem;
+  font-size: .9rem;
+}
+
+/* Lightbox */
+.gal-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.85);
+  border: none;
+  padding: 0;
+  z-index: 9999;
+}
+.gal-lightbox[open] {
+  display: flex;
+}
+.gal-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+.gal-close, .gal-prev, .gal-next {
+  position: absolute;
+  background: #0009;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: .5rem .75rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.gal-close { top: 20px; right: 20px; font-size: 2.5rem; }
+.gal-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.gal-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+
 
