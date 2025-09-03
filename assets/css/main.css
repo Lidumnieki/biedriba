@@ -4088,3 +4088,19 @@ details p, details ul, details ol {
 .scroll-to-top.show {
   opacity: 1;
 }
+
+/* Vienkārša galerija */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
