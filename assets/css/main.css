@@ -4144,31 +4144,37 @@ details p, details ul, details ol {
 dialog.gal-lightbox button.gal-close,
 dialog.gal-lightbox button.gal-prev,
 dialog.gal-lightbox button.gal-next {
-  all: unset;               /* atiestata VISUS pārmantotos Spectral stilus */
+  all: unset; /* noņem VISUS mantojumus */
+  box-sizing: border-box;
+
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px !important;   /* fiksēts izmērs */
-  height: 40px !important;
-  background: rgba(0,0,0,0.6) !important;
-  color: #fff !important;
-  font-size: 1.5rem !important;
-  border-radius: 50% !important; /* aplis */
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+
+  border-radius: 50%;
   cursor: pointer;
-  transition: background .2s;
+  transition: background 0.2s;
   z-index: 10000;
 }
 
 dialog.gal-lightbox button.gal-close:hover,
 dialog.gal-lightbox button.gal-prev:hover,
 dialog.gal-lightbox button.gal-next:hover {
-  background: rgba(0,0,0,0.9) !important;
+  background: rgba(0,0,0,0.9);
 }
 
-dialog.gal-lightbox button.gal-close { 
-  top: 20px; 
-  right: 20px; 
+dialog.gal-lightbox button.gal-close {
+  top: 20px;
+  right: 20px;
 }
 
 dialog.gal-lightbox button.gal-prev,
@@ -4179,6 +4185,8 @@ dialog.gal-lightbox button.gal-next {
 
 dialog.gal-lightbox button.gal-prev { left: 20px; }
 dialog.gal-lightbox button.gal-next { right: 20px; }
+
+
 
 
 
