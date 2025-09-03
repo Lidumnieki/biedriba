@@ -4141,38 +4141,46 @@ details p, details ul, details ol {
   border-radius: 10px;
   box-shadow: 0 0 20px #000;
 }
-.gal-close, .gal-prev, .gal-next {
+dialog.gal-lightbox button.gal-close,
+dialog.gal-lightbox button.gal-prev,
+dialog.gal-lightbox button.gal-next {
+  all: unset;               /* atiestata VISUS pārmantotos Spectral stilus */
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;      /* fiksēts izmērs */
-  height: 40px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  font-size: 1.5rem;
-  border-radius: 50%;  /* perfekts aplis */
+  width: 40px !important;   /* fiksēts izmērs */
+  height: 40px !important;
+  background: rgba(0,0,0,0.6) !important;
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  border-radius: 50% !important; /* aplis */
   cursor: pointer;
   transition: background .2s;
+  z-index: 10000;
 }
 
-.gal-close:hover, .gal-prev:hover, .gal-next:hover {
-  background: rgba(0,0,0,0.9);
+dialog.gal-lightbox button.gal-close:hover,
+dialog.gal-lightbox button.gal-prev:hover,
+dialog.gal-lightbox button.gal-next:hover {
+  background: rgba(0,0,0,0.9) !important;
 }
 
-.gal-close { 
+dialog.gal-lightbox button.gal-close { 
   top: 20px; 
   right: 20px; 
 }
 
-.gal-prev, .gal-next {
+dialog.gal-lightbox button.gal-prev,
+dialog.gal-lightbox button.gal-next {
   top: 50%;
   transform: translateY(-50%);
 }
 
-.gal-prev { left: 20px; }
-.gal-next { right: 20px; }
+dialog.gal-lightbox button.gal-prev { left: 20px; }
+dialog.gal-lightbox button.gal-next { right: 20px; }
+
+
 
 
 
