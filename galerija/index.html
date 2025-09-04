@@ -7,40 +7,53 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+
     <style>
-      /* === Galerija ar lightbox === */
+      /* ===== Centrēts ietvars šai lapas sadaļai ===== */
+      .gal-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* ===== Apraksta bloks ===== */
+      .gal-desc {
+        margin: 0 0 1rem 0;
+        opacity: .9;
+      }
+
+      /* ===== Galerija ar lightbox ===== */
       .gal-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
-        margin: 20px 0;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin: 20px 0 40px;
       }
       .gal-card {
         position: relative;
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: 12px;
         background: #111;
         cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,.25);
       }
       .gal-card img {
         width: 100%;
         height: auto;
         display: block;
-        transition: transform .3s;
+        transition: transform .3s ease;
       }
-      .gal-card:hover img {
-        transform: scale(1.05);
-      }
+      .gal-card:hover img { transform: scale(1.04); }
       .gal-card figcaption {
         position: absolute;
-        bottom: 0; left: 0; right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
-        color: #fff;
-        padding: .5rem;
+        left: 0; right: 0; bottom: 0;
+        padding: .5rem .7rem;
         font-size: .9rem;
+        color: #fff;
+        background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
       }
 
-      /* Lightbox */
+      /* ===== Lightbox dialog ===== */
       .gal-lightbox {
         position: fixed;
         inset: 0;
@@ -49,36 +62,67 @@
         align-items: center;
         background: rgba(0,0,0,.85);
         border: none;
-        padding: 0;
+        padding: 2rem 1rem;
         z-index: 9999;
       }
-      .gal-lightbox[open] {
-        display: flex;
+      .gal-lightbox[open] { display: flex; }
+      .gal-box {
+        display: grid;
+        gap: .75rem;
+        justify-items: center;
       }
       .gal-img {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 10px;
-        box-shadow: 0 0 20px #000;
+        max-width: min(96vw, 1200px);
+        max-height: 80vh;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.45);
       }
-      .gal-close, .gal-prev, .gal-next {
-        position: absolute;
-        background: #0009;
+      .gal-cap {
         color: #fff;
-        border: none;
-        font-size: 2rem;
-        padding: .5rem .75rem;
+        font-size: .95rem;
+        opacity: .9;
+        text-align: center;
+        max-width: min(92vw, 1100px);
+      }
+
+      /* ——— Pārdefinējam Spectral pogu stilus: apaļas, centrētas ——— */
+      dialog.gal-lightbox button.gal-close,
+      dialog.gal-lightbox button.gal-prev,
+      dialog.gal-lightbox button.gal-next {
+        all: unset;               /* noņem visus mantojumus no motīva */
+        box-sizing: border-box;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: rgba(0,0,0,0.65);
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
         border-radius: 50%;
         cursor: pointer;
+        transition: background .2s ease, transform .05s ease;
+        z-index: 10000;
       }
-      .gal-close { top: 20px; right: 20px; font-size: 2.5rem; }
-      .gal-prev { left: 20px; top: 50%; transform: translateY(-50%); }
-      .gal-next { right: 20px; top: 50%; transform: translateY(-50%); }
+      dialog.gal-lightbox button.gal-close { top: 18px; right: 18px; }
+      dialog.gal-lightbox button.gal-prev  { left: 18px;  top: 50%; transform: translateY(-50%); }
+      dialog.gal-lightbox button.gal-next  { right: 18px; top: 50%; transform: translateY(-50%); }
+      dialog.gal-lightbox button.gal-close:hover,
+      dialog.gal-lightbox button.gal-prev:hover,
+      dialog.gal-lightbox button.gal-next:hover { background: rgba(0,0,0,0.9); }
+      dialog.gal-lightbox button:active { transform: translateY(-50%) scale(0.96); }
+
       dialog::backdrop { background: rgba(0,0,0,0.85); }
+
+      @media (max-width: 520px) {
+        .gal-grid { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
-  <body id="top" class="landing is-preload">
 
+  <body id="top" class="landing is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
@@ -86,28 +130,35 @@
         <h1><a href="index.html">Līdumnieki</a></h1>
       </header>
 
-      <!-- One -->
+      <!-- Galerijas sadaļa -->
       <section id="one" class="wrapper style3">
         <section class="wrapper style3">
-          <div class="inner">
+          <div class="inner gal-wrap">
             <header class="major">
               <h2>Galerija</h2>
             </header>
 
+            <!-- Pasākuma apraksts -->
+            <p class="gal-desc">
+              Šīs fotogrāfijas uzņemtas biedrības “Līdumnieki” brīvprātīgo talkā “Zaļā svētdiena”.
+              Dienas laikā stādījām, kopām dobes un dalījāmies pieredzē par dārzkopību. Paldies visiem
+              dalībniekiem par atsaucību un sirsnīgo atmosfēru!
+            </p>
+
             <!-- Galerija -->
             <div class="gal-grid" id="gal">
               <figure class="gal-card">
-                <img src="/images/img1.jpg" alt="Apraksts 1" data-full="/images/img1.jpg" />
+                <img src="/images/img1.jpg" alt="Stādīšana un pieraksti pie dobes" data-full="/images/img1.jpg" />
                 <figcaption>Nosaukums 1</figcaption>
               </figure>
 
               <figure class="gal-card">
-                <img src="/images/img2.jpg" alt="Apraksts 2" data-full="/images/img2.jpg" />
+                <img src="/images/img2.jpg" alt="Mājas ogu raža un pašgatavots ievārījums" data-full="/images/img2.jpg" />
                 <figcaption>Nosaukums 2</figcaption>
               </figure>
 
               <figure class="gal-card">
-                <img src="/images/img3.jpg" alt="Apraksts 3" data-full="/images/img3.jpg" />
+                <img src="/images/img3.jpg" alt="Krāsainie audumi radošajai darbnīcai" data-full="/images/img3.jpg" />
                 <figcaption>Nosaukums 3</figcaption>
               </figure>
             </div>
@@ -117,10 +168,13 @@
 
       <!-- Lightbox dialogs -->
       <dialog class="gal-lightbox" id="gal-lightbox" aria-label="Lielais attēls">
-        <button class="gal-close" aria-label="Aizvērt (Esc)">&times;</button>
-        <button class="gal-prev" aria-label="Iepriekšējais">&#8249;</button>
-        <img class="gal-img" alt="" />
-        <button class="gal-next" aria-label="Nākamais">&#8250;</button>
+        <button class="gal-close" aria-label="Aizvērt (Esc)">×</button>
+        <button class="gal-prev"  aria-label="Iepriekšējais">‹</button>
+        <div class="gal-box">
+          <img class="gal-img" alt="" />
+          <p class="gal-cap"></p>
+        </div>
+        <button class="gal-next"  aria-label="Nākamais">›</button>
       </dialog>
 
       <!-- Footer -->
@@ -130,12 +184,12 @@
           <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="copyright">
-          <li>&copy; Biedrība "Līdumnieki"</li><li>2025 </li>
+          <li>&copy; Biedrība "Līdumnieki"</li><li>2025</li>
         </ul>
       </footer>
     </div>
 
-    <!-- Scripts -->
+    <!-- Spectral skripti -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>
@@ -144,48 +198,28 @@
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
 
-    <!-- Lightbox script -->
+    <!-- Lightbox JS -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      console.log("Lightbox skripts ielādēts!"); // DEBUG
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = [...document.querySelectorAll('#gal .gal-card')];
+        const dlg = document.getElementById('gal-lightbox');
+        const img = dlg.querySelector('.gal-img');
+        const cap = dlg.querySelector('.gal-cap');
+        const btnClose = dlg.querySelector('.gal-close');
+        const btnPrev  = dlg.querySelector('.gal-prev');
+        const btnNext  = dlg.querySelector('.gal-next');
+        let index = 0;
 
-      const items = [...document.querySelectorAll('#gal .gal-card img')];
-      const dlg = document.getElementById('gal-lightbox');
-      const img = dlg.querySelector('.gal-img');
-      const btnClose = dlg.querySelector('.gal-close');
-      const btnPrev = dlg.querySelector('.gal-prev');
-      const btnNext = dlg.querySelector('.gal-next');
-      let index = 0;
-
-      function openAt(i) {
-        index = i;
-        const src = items[i].dataset.full || items[i].src;
-        const alt = items[i].alt || '';
-        img.src = src;
-        img.alt = alt;
-        dlg.showModal();
-      }
-
-      function closeBox() { dlg.close(); img.removeAttribute('src'); }
-      function prev() { openAt((index - 1 + items.length) % items.length); }
-      function next() { openAt((index + 1) % items.length); }
-
-      items.forEach((el, i) => {
-        el.addEventListener('click', () => openAt(i));
-      });
-
-      btnClose.addEventListener('click', closeBox);
-      btnPrev.addEventListener('click', prev);
-      btnNext.addEventListener('click', next);
-      dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
-
-      document.addEventListener('keydown', (e) => {
-        if (!dlg.open) return;
-        if (e.key === 'Escape') closeBox();
-        if (e.key === 'ArrowLeft') prev();
-        if (e.key === 'ArrowRight') next();
-      });
-    });
-    </script>
-  </body>
-</html>
+        function openAt(i) {
+          index = i;
+          const el = items[i];
+          const picture = el.querySelector('img');
+          const src = picture.dataset.full || picture.src;
+          img.src = src;
+          img.alt = picture.alt || '';
+          cap.textContent = el.querySelector('figcaption')?.textContent?.trim() || '';
+          dlg.showModal();
+        }
+        function closeBox() { dlg.close(); img.removeAttribute('src'); cap.textContent=''; }
+        function prev() { openAt((index - 1 + items.length) % items.length); }
+        function next() { openAt((index + 1) % items.length); }
