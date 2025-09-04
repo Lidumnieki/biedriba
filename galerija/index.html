@@ -201,26 +201,50 @@
 
     <!-- Lightbox JS -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const items = [...document.querySelectorAll('#gal .gal-card')];
-        const dlg = document.getElementById('gal-lightbox');
-        const img = dlg.querySelector('.gal-img');
-        const cap = dlg.querySelector('.gal-cap');
-        const btnClose = dlg.querySelector('.gal-close');
-        const btnPrev  = dlg.querySelector('.gal-prev');
-        const btnNext  = dlg.querySelector('.gal-next');
-        let index = 0;
-
-        function openAt(i) {
-          index = i;
-          const el = items[i];
-          const picture = el.querySelector('img');
-          const src = picture.dataset.full || picture.src;
-          img.src = src;
-          img.alt = picture.alt || '';
-          cap.textContent = el.querySelector('figcaption')?.textContent?.trim() || '';
-          dlg.showModal();
-        }
-        function closeBox() { dlg.close(); img.removeAttribute('src'); cap.textContent=''; }
-        function prev() { openAt((index - 1 + items.length) % items.length); }
-        function next() { openAt((index + 1) % items.length); }
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = [...document.querySelectorAll('#gal .gal-card')];
+      const dlg = document.getElementById('gal-lightbox');
+      const img = dlg.querySelector('.gal-img');
+      const cap = dlg.querySelector('.gal-cap');
+      const btnClose = dlg.querySelector('.gal-close');
+      const btnPrev  = dlg.querySelector('.gal-prev');
+      const btnNext  = dlg.querySelector('.gal-next');
+      let index = 0;
+    
+      function openAt(i) {
+        index = i;
+        const el = items[i];
+        const picture = el.querySelector('img');
+        const src = picture.dataset.full || picture.src;
+        img.src = src;
+        img.alt = picture.alt || '';
+        cap.textContent = el.querySelector('figcaption')?.textContent?.trim() || '';
+        dlg.showModal();
+      }
+      function closeBox() { dlg.close(); img.removeAttribute('src'); cap.textContent=''; }
+      function prev() { openAt((index - 1 + items.length) % items.length); }
+      function next() { openAt((index + 1) % items.length); }
+    
+      /* >>> ŠIS TEV TRŪKA: piesaistām klikšķus <<< */
+      // Atvērt, kad klikšķina uz bildes vai figūras
+      items.forEach((el, i) => {
+        el.addEventListener('click', () => openAt(i));
+      });
+    
+      // Pogu klikšķi
+      btnClose.addEventListener('click', closeBox);
+      btnPrev .addEventListener('click', prev);
+      btnNext .addEventListener('click', next);
+    
+      // Aizvērt, ja klikšķis uz fona
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) closeBox(); });
+    
+      // Klaviatūra
+      document.addEventListener('keydown', (e) => {
+        if (!dlg.open) return;
+        if (e.key === 'Escape')     closeBox();
+        if (e.key === 'ArrowLeft')  prev();
+        if (e.key === 'ArrowRight') next();
+      });
+    });
+    </script>
